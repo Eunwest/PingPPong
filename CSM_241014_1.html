@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Game</title>
+    <link rel="stylesheet" href="../문서/CSM_241014.css">
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="gameMessage" style="display: none;">
+        <h1>Press Enter to Start</h1>
+    </div>
+
+    <div id="levelUpMessage" style="display: none;">
+        <h2>Level Up! : <span id="levelDisplay"></span></h2>
+    </div>
+
+    <!-- 관리자 메뉴 -->
+    <div id="adminMenu" style="display: none;">
+        <h3>Admin Menu</h3>
+        <div>
+            <button onclick="toggleLevelControls()">Change Level</button>
+            <div id="levelControls" style="display: none;">
+                <button onclick="setLevel(1)">Level 1</button>
+                <button onclick="setLevel(2)">Level 2</button>
+                <button onclick="setLevel(3)">Level 3</button>
+            </div>
+        </div>
+        <div>
+            <button onclick="toggleColorControls()">Change Player Color</button>
+            <div id="colorControls" style="display: none;">
+                <button onclick="setPlayerColor('blue')">Blue</button>
+                <button onclick="setPlayerColor('green')">Green</button>
+                <button onclick="setPlayerColor('yellow')">Yellow</button>
+            </div>
+        </div>
+        <div>
+            <button onclick="toggleObstacleSpeedControls()">Obstacle Speed</button>
+            <div id="obstacleSpeedControls" style="display: none;">
+                <button onclick="setObstacleSpeed(1)">Slow</button>
+                <button onclick="setObstacleSpeed(3)">Normal</button>
+                <button onclick="setObstacleSpeed(5)">Fast</button>
+            </div>
+        </div>
+        <div>
+            <button onclick="toggleBallSpeedControls()">Ball Speed</button>
+            <div id="ballSpeedControls" style="display: none;">
+                <button onclick="setBallSpeed(2)">Slow</button>
+                <button onclick="setBallSpeed(4)">Normal</button>
+                <button onclick="setBallSpeed(6)">Fast</button>
+            </div>
+        </div>
+        <button onclick="toggleAdminMenu()">Close Admin Menu</button>
+    </div>
+
+    <!-- 관리자 메뉴 열기 버튼 -->
+    <button id="adminButton" onclick="toggleAdminMenu()">Admin Menu</button>
+
+    <script src="../문서/CSM_241014.js"></script>
+</body>
+</html>
