@@ -51,6 +51,9 @@ document.addEventListener('keyup', function(event) {
     }
 });
 
+// 게임 시작 전 메시지 표시 (초기 상태에서)
+document.getElementById('gameMessage').style.display = 'block';
+
 // 게임 시작 함수
 function startGame() {
     document.getElementById('gameMessage').style.display = 'none';
