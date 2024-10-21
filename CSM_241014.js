@@ -129,9 +129,24 @@ function update() {
 function checkLevelUp() {
     if (score === 5 && level === 1) {
         setLevel(2);  // 5점에서 레벨 2로
+		showLevelUpMessage(2);  // 레벨업 메시지 출력
     } else if (score === 10 && level === 2) {
         setLevel(3);  // 10점에서 레벨 3으로
+		showLevelUpMessage(3);  // 레벨업 메시지 출력
     }
+}
+
+// 레벨업 메시지 표시 함수
+function showLevelUpMessage(newLevel) {
+    const levelUpMessage = document.getElementById('levelUpMessage');
+    const levelDisplay = document.getElementById('levelDisplay');
+    levelDisplay.innerText = `lv.${newLevel}`;
+    levelUpMessage.style.display = 'block';
+
+    // 2초 후 메시지 숨김
+    setTimeout(() => {
+        levelUpMessage.style.display = 'none';
+    }, 2000);  // 2초 동안 메시지 표시 후 사라짐
 }
 
 // 공 초기화
