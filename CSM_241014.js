@@ -90,6 +90,7 @@ function update() {
         ball.y > playerPaddle.y && ball.y < playerPaddle.y + playerPaddle.height) {
         ball.dx *= -1;
         score++;  // 점수 증가
+        checkLevelUp();
     }
 
     if (ball.x + ball.radius > aiPaddle.x &&
@@ -121,6 +122,15 @@ function update() {
             ball.y - ball.radius < obstacle.height + obstacle.y) {
             ball.dx *= -1;  // 공이 장애물에 부딪히면 방향 변경
         }
+    }
+}
+
+// 레벨업 조건 체크
+function checkLevelUp() {
+    if (score === 5 && level === 1) {
+        setLevel(2);  // 5점에서 레벨 2로
+    } else if (score === 10 && level === 2) {
+        setLevel(3);  // 10점에서 레벨 3으로
     }
 }
 
